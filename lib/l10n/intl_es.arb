@@ -1,0 +1,19 @@
+{
+    "tMyNotes": "Mis Notas",
+    "tLanguageSpanish": "Español",
+    "tLanguageEnglish": "Ingles",
+    "tNoNote": "Aún no hay notas",
+    "tSetting": "Configuración",
+    "tDark": "Oscuro",
+    "tLight": "Claro",
+    "tTheme": "Tema",
+    "tLanguage": "Idioma",
+    "tDeleteNote": "Eliminar nota",
+    "tDeleteNotes": "Eliminar notas",
+    "tDeleteThisNote": "¿Eliminar esta nota?",
+    "tCancel": "Cancelar",
+    "tRemove": "Eliminar",
+    "tItHasUpdated": "Se actualizó",
+    "tNothingToSave": "Nada que guardar",
+    "tSearchNote": "Buscar nota"
+}
