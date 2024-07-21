@@ -15,5 +15,17 @@
     "tRemove": "Remove",
     "tItHasUpdated": "It has updated",
     "tNothingToSave": "Nothing to save",
-    "tSearchNote": "Search note"
+    "tSearchNote": "Search note",
+    "tBackButton": "Back button",
+    "tSettingButton": "Setting button",
+    "tAddNoteButton": "Add note button",
+    "tSaveNoteButton": "Save note button",
+    "tTitle": "Title",
+    "tStartwriting": "Empiece a escribir",
+    "tAddATitle": "Agregue un título",
+    "tWriteANote": "Escriba una nota",
+    "tDeleteNoteButton": "Delete note button",
+    "tShowLanguageMenu": "Show language menu",
+    "tShowThemeMenu": "Show theme menu",
+    "tCancelButton": "Cancel button"
 }

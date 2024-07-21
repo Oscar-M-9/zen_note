@@ -219,6 +219,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Back button`
+  String get tBackButton {
+    return Intl.message(
+      'Back button',
+      name: 'tBackButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting button`
+  String get tSettingButton {
+    return Intl.message(
+      'Setting button',
+      name: 'tSettingButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add note button`
+  String get tAddNoteButton {
+    return Intl.message(
+      'Add note button',
+      name: 'tAddNoteButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save note button`
+  String get tSaveNoteButton {
+    return Intl.message(
+      'Save note button',
+      name: 'tSaveNoteButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get tTitle {
+    return Intl.message(
+      'Title',
+      name: 'tTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Empiece a escribir`
+  String get tStartwriting {
+    return Intl.message(
+      'Empiece a escribir',
+      name: 'tStartwriting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Agregue un título`
+  String get tAddATitle {
+    return Intl.message(
+      'Agregue un título',
+      name: 'tAddATitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Escriba una nota`
+  String get tWriteANote {
+    return Intl.message(
+      'Escriba una nota',
+      name: 'tWriteANote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete note button`
+  String get tDeleteNoteButton {
+    return Intl.message(
+      'Delete note button',
+      name: 'tDeleteNoteButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show language menu`
+  String get tShowLanguageMenu {
+    return Intl.message(
+      'Show language menu',
+      name: 'tShowLanguageMenu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show theme menu`
+  String get tShowThemeMenu {
+    return Intl.message(
+      'Show theme menu',
+      name: 'tShowThemeMenu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel button`
+  String get tCancelButton {
+    return Intl.message(
+      'Cancel button',
+      name: 'tCancelButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

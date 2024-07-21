@@ -63,15 +63,20 @@ class HomePageState extends ConsumerState<HomePage> {
                 centerTitle: true,
               ),
               actions: [
-                IconButton(
-                  onPressed: () {
-                    ref.read(selectedNotesProvider.notifier).clear();
-                    context.router.pushNamed(RouteName.setting);
-                  },
-                  icon: SvgPicture.asset(
-                    "assets/svg/settings.svg",
-                    // ignore: deprecated_member_use
-                    color: Theme.of(context).appBarTheme.iconTheme?.color,
+                Semantics(
+                  label: S.of(context).tSettingButton,
+                  excludeSemantics: true,
+                  focusable: true,
+                  child: IconButton(
+                    onPressed: () {
+                      ref.read(selectedNotesProvider.notifier).clear();
+                      context.router.pushNamed(RouteName.setting);
+                    },
+                    icon: SvgPicture.asset(
+                      "assets/svg/settings.svg",
+                      // ignore: deprecated_member_use
+                      color: Theme.of(context).appBarTheme.iconTheme?.color,
+                    ),
                   ),
                 ),
               ],
@@ -124,18 +129,28 @@ class HomePageState extends ConsumerState<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      IconButton(
-                        icon: SvgPicture.asset(
-                          "assets/svg/cancel.svg",
-                          width: 20,
-                          // ignore: deprecated_member_use
-                          color: Theme.of(context).appBarTheme.iconTheme?.color,
-                        ),
-                        onPressed: () {
-                          ref.read(selectedNotesProvider.notifier).clear();
-                        },
-                        style: IconButton.styleFrom(
-                          backgroundColor: ColorsApp.primary,
+                      Focus(
+                        child: Semantics(
+                          label: S.of(context).tCancelButton,
+                          excludeSemantics: true,
+                          focusable: true,
+                          child: IconButton(
+                            icon: SvgPicture.asset(
+                              "assets/svg/cancel.svg",
+                              width: 20,
+                              // ignore: deprecated_member_use
+                              color: Theme.of(context)
+                                  .appBarTheme
+                                  .iconTheme
+                                  ?.color,
+                            ),
+                            onPressed: () {
+                              ref.read(selectedNotesProvider.notifier).clear();
+                            },
+                            style: IconButton.styleFrom(
+                              backgroundColor: ColorsApp.primary,
+                            ),
+                          ),
                         ),
                       ),
                       ElevatedButton.icon(
@@ -166,19 +181,30 @@ class HomePageState extends ConsumerState<HomePage> {
                   ),
                 ),
               ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            ref.read(selectedNotesProvider.notifier).clear();
-            context.router.pushNamed(RouteName.addNote);
-          },
-          elevation: 0,
-          hoverElevation: 0,
-          highlightElevation: 0,
-          backgroundColor: ColorsApp.primary,
-          child: SvgPicture.asset(
-            "assets/svg/add-note.svg",
-            // ignore: deprecated_member_use
-            color: Theme.of(context).appBarTheme.iconTheme?.color,
+        floatingActionButton: Focus(
+          child: Semantics(
+            label: S.of(context).tAddNoteButton,
+            excludeSemantics: true,
+            focusable: true,
+            button: true,
+            expanded: false,
+            child: FloatingActionButton(
+              onPressed: () {
+                ref.read(selectedNotesProvider.notifier).clear();
+                context.router.pushNamed(RouteName.addNote);
+              },
+              elevation: 0,
+              hoverElevation: 0,
+              highlightElevation: 0,
+              backgroundColor: ColorsApp.primary,
+              child: Semantics(
+                child: SvgPicture.asset(
+                  "assets/svg/add-note.svg",
+                  // ignore: deprecated_member_use
+                  color: Theme.of(context).appBarTheme.iconTheme?.color,
+                ),
+              ),
+            ),
           ),
         ),
       ),

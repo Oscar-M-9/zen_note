@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class ColorsApp {
   //
-  static const Color primary = Color.fromARGB(255, 255, 179, 0);
+  static const Color primary = Color(0xFFFFB300);
   //
   static const Map<int, Color> swatch = {
     50: Color(0xFFfffaeb),

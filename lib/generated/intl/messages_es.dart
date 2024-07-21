@@ -22,9 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "tAddATitle": MessageLookupByLibrary.simpleMessage("agregue un título"),
+        "tAddNoteButton":
+            MessageLookupByLibrary.simpleMessage("Botón de agregar nota"),
+        "tBackButton": MessageLookupByLibrary.simpleMessage("Botón atras"),
         "tCancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
+        "tCancelButton":
+            MessageLookupByLibrary.simpleMessage("Botón de cancelar"),
         "tDark": MessageLookupByLibrary.simpleMessage("Oscuro"),
         "tDeleteNote": MessageLookupByLibrary.simpleMessage("Eliminar nota"),
+        "tDeleteNoteButton":
+            MessageLookupByLibrary.simpleMessage("Botón de eliminar nota"),
         "tDeleteNotes": MessageLookupByLibrary.simpleMessage("Eliminar notas"),
         "tDeleteThisNote":
             MessageLookupByLibrary.simpleMessage("¿Eliminar esta nota?"),
@@ -38,8 +46,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "tNothingToSave":
             MessageLookupByLibrary.simpleMessage("Nada que guardar"),
         "tRemove": MessageLookupByLibrary.simpleMessage("Eliminar"),
+        "tSaveNoteButton":
+            MessageLookupByLibrary.simpleMessage("Botón de guardar nota"),
         "tSearchNote": MessageLookupByLibrary.simpleMessage("Buscar nota"),
         "tSetting": MessageLookupByLibrary.simpleMessage("Configuración"),
-        "tTheme": MessageLookupByLibrary.simpleMessage("Tema")
+        "tSettingButton":
+            MessageLookupByLibrary.simpleMessage("Botón de configuración"),
+        "tShowLanguageMenu":
+            MessageLookupByLibrary.simpleMessage("Mostar menu de idiomas"),
+        "tShowThemeMenu":
+            MessageLookupByLibrary.simpleMessage("Mostrar menu de temas"),
+        "tTheme": MessageLookupByLibrary.simpleMessage("Tema"),
+        "tTitle": MessageLookupByLibrary.simpleMessage("Título"),
+        "tWriteANote": MessageLookupByLibrary.simpleMessage("Escribe una nota")
       };
 }

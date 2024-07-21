@@ -129,8 +129,10 @@ class UpdateNotePageState extends ConsumerState<UpdateNotePage> {
           leading: const CustomBackButton(),
           actions: [
             // if (isKeyboardVisible)
-            Padding(
-              padding: const EdgeInsets.only(right: 5),
+            Semantics(
+              label: S.of(context).tSaveNoteButton,
+              excludeSemantics: true,
+              focusable: true,
               child: IconButton(
                 onPressed: _saveNote,
                 icon: SvgPicture.asset(
@@ -140,14 +142,20 @@ class UpdateNotePageState extends ConsumerState<UpdateNotePage> {
                 ),
               ),
             ),
-            IconButton(
-              onPressed: () {
-                _showDialogDeleteNote(context);
-              },
-              icon: SvgPicture.asset(
-                "assets/svg/delete-note.svg",
-                // ignore: deprecated_member_use
-                color: Theme.of(context).appBarTheme.iconTheme?.color,
+            const SizedBox(width: 5),
+            Semantics(
+              label: S.of(context).tDeleteNoteButton,
+              excludeSemantics: true,
+              focusable: true,
+              child: IconButton(
+                onPressed: () {
+                  _showDialogDeleteNote(context);
+                },
+                icon: SvgPicture.asset(
+                  "assets/svg/delete-note.svg",
+                  // ignore: deprecated_member_use
+                  color: Theme.of(context).appBarTheme.iconTheme?.color,
+                ),
               ),
             ),
           ],

@@ -13,7 +13,7 @@ final languageProvider =
 });
 
 class LanguageNotifier extends StateNotifier<LanguageApp> {
-  LanguageNotifier() : super(LanguageApp.english) {
+  LanguageNotifier() : super(LanguageApp.spanish) {
     _loadLanguage();
   }
 

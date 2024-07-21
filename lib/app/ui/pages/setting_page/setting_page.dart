@@ -67,10 +67,15 @@ class SettingPage extends ConsumerWidget {
             trailing: PopupMenuButton<ThemeApp>(
               icon: RotatedBox(
                 quarterTurns: 75,
-                child: SvgPicture.asset(
-                  "assets/svg/code.svg",
-                  // ignore: deprecated_member_use
-                  color: Theme.of(context).appBarTheme.iconTheme?.color,
+                child: Semantics(
+                  label: S.of(context).tShowThemeMenu,
+                  excludeSemantics: true,
+                  focusable: true,
+                  child: SvgPicture.asset(
+                    "assets/svg/code.svg",
+                    // ignore: deprecated_member_use
+                    color: Theme.of(context).appBarTheme.iconTheme?.color,
+                  ),
                 ),
               ),
               itemBuilder: (context) => [
@@ -137,12 +142,17 @@ class SettingPage extends ConsumerWidget {
               style: Theme.of(context).textTheme.bodySmall,
             ),
             trailing: PopupMenuButton<LanguageApp>(
-              icon: RotatedBox(
-                quarterTurns: 75,
-                child: SvgPicture.asset(
-                  "assets/svg/code.svg",
-                  // ignore: deprecated_member_use
-                  color: Theme.of(context).appBarTheme.iconTheme?.color,
+              icon: Semantics(
+                label: S.of(context).tShowLanguageMenu,
+                excludeSemantics: true,
+                focusable: true,
+                child: RotatedBox(
+                  quarterTurns: 75,
+                  child: SvgPicture.asset(
+                    "assets/svg/code.svg",
+                    // ignore: deprecated_member_use
+                    color: Theme.of(context).appBarTheme.iconTheme?.color,
+                  ),
                 ),
               ),
               itemBuilder: (context) => [

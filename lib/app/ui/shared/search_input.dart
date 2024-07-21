@@ -24,33 +24,35 @@ class SearchInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15).copyWith(top: 15),
-      child: TextFormField(
-        controller: controller,
-        // initialValue: initialValue,
-        keyboardType: TextInputType.text,
-        focusNode: focusNode,
-        autocorrect: false,
-        onChanged: onChanged,
-        style: Theme.of(context).textTheme.titleMedium,
-        decoration: InputDecoration(
-          contentPadding: const EdgeInsets.all(15),
-          prefixIcon: prefixIcon,
-          hintText: hinText,
-          suffixIcon: suffixIcon,
-          hintStyle: Theme.of(context).textTheme.bodyMedium,
-          filled: true,
-          fillColor: Theme.of(context).cardColor,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide.none,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide.none,
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
-            borderSide: BorderSide.none,
+      child: Semantics(
+        child: TextFormField(
+          controller: controller,
+          // initialValue: initialValue,
+          keyboardType: TextInputType.text,
+          focusNode: focusNode,
+          autocorrect: false,
+          onChanged: onChanged,
+          style: Theme.of(context).textTheme.titleMedium,
+          decoration: InputDecoration(
+            contentPadding: const EdgeInsets.all(15),
+            prefixIcon: prefixIcon,
+            hintText: hinText,
+            suffixIcon: suffixIcon,
+            hintStyle: Theme.of(context).textTheme.bodyMedium,
+            filled: true,
+            fillColor: Theme.of(context).cardColor,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide.none,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide.none,
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide.none,
+            ),
           ),
         ),
       ),

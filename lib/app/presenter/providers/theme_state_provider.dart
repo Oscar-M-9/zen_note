@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
 import 'package:my_notes/app/config/theme/colors_app.dart';
 
@@ -61,26 +60,32 @@ ThemeData _themeData(ThemeApp themeApp) {
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: ColorsApp.primeColor,
         ),
-        textTheme: TextTheme(
-          labelLarge: GoogleFonts.poppins(
+        textTheme: const TextTheme(
+          labelLarge: TextStyle(
+            fontFamily: "Poppins",
             fontSize: 14,
             color: Colors.white,
           ),
-          headlineLarge: GoogleFonts.chewy(
+          headlineLarge: TextStyle(
+            fontFamily: "Chewy",
             fontSize: 28,
             fontWeight: FontWeight.normal,
             color: Colors.white,
           ),
-          titleLarge: GoogleFonts.lato(
+          titleLarge: TextStyle(
+            fontFamily: "Lato",
             color: Colors.white,
           ),
-          titleMedium: GoogleFonts.lato(
+          titleMedium: TextStyle(
+            fontFamily: "Lato",
             color: Colors.white,
           ),
-          bodyMedium: GoogleFonts.lato(
+          bodyMedium: TextStyle(
+            fontFamily: "Lato",
             color: Colors.white,
           ),
-          bodySmall: GoogleFonts.lato(
+          bodySmall: TextStyle(
+            fontFamily: "Lato",
             color: Colors.grey,
           ),
         ),
@@ -114,26 +119,32 @@ ThemeData _themeData(ThemeApp themeApp) {
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: ColorsApp.primeColor,
         ),
-        textTheme: TextTheme(
-          labelLarge: GoogleFonts.poppins(
+        textTheme: const TextTheme(
+          labelLarge: TextStyle(
+            fontFamily: "Poppins",
             fontSize: 14,
             color: Colors.grey,
           ),
-          headlineLarge: GoogleFonts.chewy(
+          headlineLarge: TextStyle(
+            fontFamily: "Chewy",
             fontSize: 28,
             fontWeight: FontWeight.normal,
             color: Colors.black,
           ),
-          titleLarge: GoogleFonts.lato(
+          titleLarge: TextStyle(
+            fontFamily: "Lato",
             color: Colors.black,
           ),
-          titleMedium: GoogleFonts.lato(
+          titleMedium: TextStyle(
+            fontFamily: "Lato",
             color: Colors.black,
           ),
-          bodyMedium: GoogleFonts.lato(
+          bodyMedium: TextStyle(
+            fontFamily: "Lato",
             color: Colors.black,
           ),
-          bodySmall: GoogleFonts.lato(
+          bodySmall: TextStyle(
+            fontFamily: "Lato",
             color: Colors.grey,
           ),
         ),
