@@ -104,18 +104,28 @@ ThemeData _themeData(ThemeApp themeApp) {
         bottomAppBarTheme: const BottomAppBarTheme(
           color: Colors.transparent,
         ),
+        inputDecorationTheme: const InputDecorationTheme(
+          fillColor: Color(0xFF3C3C3C),
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.black,
+        ),
+        bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Color(0xFF1F1F1F),
+        ),
       );
+
     case ThemeApp.light:
     default:
       return ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
         primaryColor: ColorsApp.primary,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xFFF6F6F6),
           foregroundColor: Colors.black,
         ),
         cardColor: Colors.white,
-        scaffoldBackgroundColor: const Color(0xFFFCFCFC),
+        scaffoldBackgroundColor: const Color(0xFFF6F6F6),
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: ColorsApp.primeColor,
         ),
@@ -162,6 +172,15 @@ ThemeData _themeData(ThemeApp themeApp) {
         ),
         bottomAppBarTheme: const BottomAppBarTheme(
           color: Colors.transparent,
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          fillColor: Color(0xFFEAEAEA),
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFFF6F6F6),
+        ),
+        bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Colors.white,
         ),
       );
   }

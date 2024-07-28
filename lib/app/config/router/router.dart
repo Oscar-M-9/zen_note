@@ -19,21 +19,32 @@ class AppRouter extends $AppRouter {
         CustomRoute(
           page: SettingRoute.page,
           path: RouteName.setting,
-          transitionsBuilder: TransitionsBuilders.zoomIn,
-          durationInMilliseconds: 400,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
         ),
         CustomRoute(
           page: AddNoteRoute.page,
           path: RouteName.addNote,
           transitionsBuilder: TransitionsBuilders.slideBottom,
-          durationInMilliseconds: 400,
+          durationInMilliseconds: 250,
         ),
         CustomRoute(
           page: UpdateNoteRoute.page,
           path: RouteName.updateNote,
-          // TransitionsBuilders class contains a preset of common transitions builders.
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
-          durationInMilliseconds: 400,
+          durationInMilliseconds: 250,
+        ),
+        CustomRoute(
+          page: CategoryFolderRoute.page,
+          path: RouteName.categoryFolder,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+        ),
+        CustomRoute(
+          page: MoveToNoteRoute.page,
+          path: RouteName.moveToNote,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
         ),
       ];
 }

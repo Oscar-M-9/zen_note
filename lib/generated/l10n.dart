@@ -339,6 +339,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Others`
+  String get tOthers {
+    return Intl.message(
+      'Others',
+      name: 'tOthers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get tPrivacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'tPrivacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Title`
+  String get tNoTitle {
+    return Intl.message(
+      'No Title',
+      name: 'tNoTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `selected{s} item{s}`
+  String tSelectedItem(Object s) {
+    return Intl.message(
+      'selected$s item$s',
+      name: 'tSelectedItem',
+      desc: '',
+      args: [s],
+    );
+  }
+
+  /// `¿Delete all selected notes ({value})?`
+  String tDeleteAllSelectedNotes(Object value) {
+    return Intl.message(
+      '¿Delete all selected notes ($value)?',
+      name: 'tDeleteAllSelectedNotes',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Move to`
+  String get tMoveTo {
+    return Intl.message(
+      'Move to',
+      name: 'tMoveTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Folders`
+  String get tFolders {
+    return Intl.message(
+      'Folders',
+      name: 'tFolders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get tAll {
+    return Intl.message(
+      'All',
+      name: 'tAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New folder`
+  String get tNewFolder {
+    return Intl.message(
+      'New folder',
+      name: 'tNewFolder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter text`
+  String get tEnterText {
+    return Intl.message(
+      'Enter text',
+      name: 'tEnterText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a text`
+  String get tEnterAText {
+    return Intl.message(
+      'Enter a text',
+      name: 'tEnterAText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accept`
+  String get tAccept {
+    return Intl.message(
+      'Accept',
+      name: 'tAccept',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops! That name is already in use.`
+  String get tNameInUse {
+    return Intl.message(
+      'Oops! That name is already in use.',
+      name: 'tNameInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get tEdit {
+    return Intl.message(
+      'Edit',
+      name: 'tEdit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rename folder`
+  String get tRenameFolder {
+    return Intl.message(
+      'Rename folder',
+      name: 'tRenameFolder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Without category`
+  String get tWithoutCategory {
+    return Intl.message(
+      'Without category',
+      name: 'tWithoutCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select folder`
+  String get tSelectFolder {
+    return Intl.message(
+      'Select folder',
+      name: 'tSelectFolder',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

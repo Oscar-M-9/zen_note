@@ -6,28 +6,28 @@ part 'note_model.g.dart';
 @HiveType(typeId: 0)
 class Note extends HiveObject {
   @HiveField(0)
-  late String id;
+  String id;
 
   @HiveField(1)
-  late String title;
+  late String? title;
 
   @HiveField(2)
   late String content;
 
   @HiveField(3)
-  late DateTime? createdAt;
+  DateTime? createdAt;
 
   @HiveField(4)
-  late DateTime? updatedAt;
+  DateTime? updatedAt;
 
   @HiveField(5)
-  late String? category;
+  String? categoryId;
 
   @HiveField(6)
-  late String? file;
+  String? folder;
 
   @HiveField(7)
-  late Map<String, dynamic>? metadata;
+  Map<String, dynamic>? metadata;
 
   Note({
     required this.id,
@@ -35,8 +35,8 @@ class Note extends HiveObject {
     required this.content,
     this.createdAt,
     this.updatedAt,
-    this.category,
-    this.file,
+    this.categoryId,
+    this.folder,
     this.metadata,
   });
 
@@ -46,8 +46,8 @@ class Note extends HiveObject {
     String? content,
     DateTime? createdAt,
     DateTime? updatedAt,
-    String? category,
-    String? file,
+    String? categoryId,
+    String? folder,
     Map<String, dynamic>? metadata,
   }) {
     return Note(
@@ -56,8 +56,8 @@ class Note extends HiveObject {
       content: content ?? this.content,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
-      category: category ?? this.category,
-      file: file ?? this.file,
+      categoryId: categoryId ?? this.categoryId,
+      folder: folder ?? this.folder,
       metadata: metadata ?? this.metadata,
     );
   }

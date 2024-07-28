@@ -4,10 +4,10 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:intl/intl.dart';
 
 import 'package:my_notes/app/config/router/router_name.dart';
 import 'package:my_notes/app/config/theme/colors_app.dart';
+import 'package:my_notes/app/config/utils/date_util.dart';
 import 'package:my_notes/app/infra/models/note_model.dart';
 
 import 'package:my_notes/app/presenter/providers/note_state_provider.dart';
@@ -106,14 +106,8 @@ class UpdateNotePageState extends ConsumerState<UpdateNotePage> {
 
   @override
   Widget build(BuildContext context) {
-    String formattedDate = "";
-    if (widget.note.updatedAt != null) {
-      formattedDate =
-          DateFormat('dd MMM yyyy HH:mm').format(widget.note.updatedAt!);
-    } else {
-      formattedDate =
-          DateFormat('dd MMM yyyy HH:mm').format(widget.note.createdAt!);
-    }
+    String formattedDate =
+        formatDateTime(widget.note.updatedAt, widget.note.createdAt!);
 
     final bool isKeyboardVisible =
         KeyboardVisibilityProvider.isKeyboardVisible(context);
@@ -293,8 +287,8 @@ class UpdateNotePageState extends ConsumerState<UpdateNotePage> {
               TextButton(
                 child: Text(S.of(context).tCancel),
                 onPressed: () {
-                  Navigator.of(context).pop();
-                  context.router.popUntilRouteWithPath(RouteName.updateNote);
+                  context.router.maybePop();
+                  // context.router.popUntilRouteWithPath(RouteName.updateNote);
                 },
               ),
               MaterialButton(

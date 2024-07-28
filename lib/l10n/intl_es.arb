@@ -26,5 +26,22 @@
     "tDeleteNoteButton": "Botón de eliminar nota",
     "tShowLanguageMenu": "Mostar menu de idiomas",
     "tShowThemeMenu": "Mostrar menu de temas",
-    "tCancelButton": "Botón de cancelar"
+    "tCancelButton": "Botón de cancelar",
+    "tOthers": "Otros",
+    "tPrivacyPolicy": "Política de Privacidad",
+    "tNoTitle": "Sin título",
+    "tSelectedItem": "elemento{s} seleccionado{s}",
+    "tDeleteAllSelectedNotes": "¿Eliminar todas las notas seleccionadas ({value})?",
+    "tMoveTo": "Mover a",
+    "tFolders": "Carpetas",
+    "tAll": "Todo",
+    "tNewFolder": "Nueva carpeta",
+    "tEnterText": "Introducir texto",
+    "tEnterAText": "Ingrese un texto",
+    "tAccept": "Aceptar",
+    "tNameInUse": "¡Ups! Ese nombre ya está en uso.",
+    "tEdit": "Editar",
+    "tRenameFolder": "Renombrar carpeta",
+    "tWithoutCategory": "Sin categoría",
+    "tSelectFolder": "Seleccionar carpeta"
 }

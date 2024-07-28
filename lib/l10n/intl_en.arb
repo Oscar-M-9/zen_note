@@ -27,5 +27,22 @@
     "tDeleteNoteButton": "Delete note button",
     "tShowLanguageMenu": "Show language menu",
     "tShowThemeMenu": "Show theme menu",
-    "tCancelButton": "Cancel button"
+    "tCancelButton": "Cancel button",
+    "tOthers": "Others",
+    "tPrivacyPolicy": "Privacy Policy",
+    "tNoTitle": "No Title",
+    "tSelectedItem": "selected{s} item{s}",
+    "tDeleteAllSelectedNotes": "¿Delete all selected notes ({value})?",
+    "tMoveTo": "Move to",
+    "tFolders": "Folders",
+    "tAll": "All",
+    "tNewFolder": "New folder",
+    "tEnterText": "Enter text",
+    "tEnterAText": "Enter a text",
+    "tAccept": "Accept",
+    "tNameInUse": "Oops! That name is already in use.",
+    "tEdit": "Edit",
+    "tRenameFolder": "Rename folder",
+    "tWithoutCategory": "Without category",
+    "tSelectFolder": "Select folder"
 }

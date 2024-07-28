@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:my_notes/app/config/router/router.gr.dart';
 import 'package:my_notes/app/infra/models/note_model.dart';
+import 'package:my_notes/app/presenter/providers/category_state_provider.dart';
 import 'package:my_notes/app/presenter/providers/note_state_provider.dart';
 import 'package:my_notes/app/presenter/providers/search_query_note_provider.dart';
 import 'package:my_notes/app/presenter/providers/selected_note_provider.dart';
@@ -18,15 +19,20 @@ class BodyHomeView extends ConsumerWidget {
     final notes = ref.watch(noteProvider);
     final selectedNotes = ref.watch(selectedNotesProvider);
     final searchQuery = ref.watch(controllerSearchProvider);
+    String? categoryId = ref.watch(activeCategory);
 
-    // Filtrar notas basadas en la consulta de búsqueda
+    // Filtrar notas basadas en la consulta de búsqueda y la categoría seleccionada
     final filteredNotes = notes.where((note) {
-      final titleLower = note.title.toLowerCase();
+      final titleLower = note.title?.toLowerCase() ?? '';
       final contentLower = note.content.toLowerCase();
       final searchLower = searchQuery.toLowerCase();
-      return titleLower.contains(searchLower) ||
+      final matchesSearch = titleLower.contains(searchLower) ||
           contentLower.contains(searchLower);
+      final matchesCategory =
+          categoryId == "all" || note.categoryId == categoryId;
+      return matchesSearch && matchesCategory;
     }).toList();
+    // print(filteredNotes.first.categoryId?.contains(categoryId as Pattern));
 
     // Ordenar las notas por fecha de creación en orden descendente
     final sortedNotes = List<Note>.from(filteredNotes)
@@ -63,11 +69,11 @@ class ListNote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.only(
-        bottom: selectedNotes.isEmpty ? 12 : 70,
+      padding: const EdgeInsets.only(
+        bottom: 12,
         top: 12,
-        right: 10,
-        left: 10,
+        right: 15,
+        left: 15,
       ),
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate(

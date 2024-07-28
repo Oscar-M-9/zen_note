@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:my_notes/app/config/router/router_name.dart';
+import 'package:my_notes/app/presenter/providers/category_state_provider.dart';
 import 'package:my_notes/app/presenter/providers/note_state_provider.dart';
 import 'package:my_notes/app/ui/shared/custom_back_button.dart';
 import 'package:my_notes/app/ui/shared/text_field_custom.dart';
@@ -33,9 +34,14 @@ class AddNotePage extends ConsumerWidget {
                   if (!formKey.currentState!.validate()) {
                     return;
                   }
+                  String? categoryId = ref.read(activeCategory);
+                  if (categoryId == "all") {
+                    categoryId = "uncategorized";
+                  }
                   ref.read(noteProvider.notifier).addNote(
                         title: titleController.text,
                         content: contentController.text,
+                        categoryId: categoryId,
                       );
                   titleController.clear();
                   contentController.clear();

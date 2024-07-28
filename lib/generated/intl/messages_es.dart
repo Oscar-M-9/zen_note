@@ -20,35 +20,60 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
+  static String m0(value) =>
+      "¿Eliminar todas las notas seleccionadas (${value})?";
+
+  static String m1(s) => "elemento${s} seleccionado${s}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "tAccept": MessageLookupByLibrary.simpleMessage("Aceptar"),
         "tAddATitle": MessageLookupByLibrary.simpleMessage("agregue un título"),
         "tAddNoteButton":
             MessageLookupByLibrary.simpleMessage("Botón de agregar nota"),
+        "tAll": MessageLookupByLibrary.simpleMessage("Todo"),
         "tBackButton": MessageLookupByLibrary.simpleMessage("Botón atras"),
         "tCancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
         "tCancelButton":
             MessageLookupByLibrary.simpleMessage("Botón de cancelar"),
         "tDark": MessageLookupByLibrary.simpleMessage("Oscuro"),
+        "tDeleteAllSelectedNotes": m0,
         "tDeleteNote": MessageLookupByLibrary.simpleMessage("Eliminar nota"),
         "tDeleteNoteButton":
             MessageLookupByLibrary.simpleMessage("Botón de eliminar nota"),
         "tDeleteNotes": MessageLookupByLibrary.simpleMessage("Eliminar notas"),
         "tDeleteThisNote":
             MessageLookupByLibrary.simpleMessage("¿Eliminar esta nota?"),
+        "tEdit": MessageLookupByLibrary.simpleMessage("Editar"),
+        "tEnterAText": MessageLookupByLibrary.simpleMessage("Ingrese un texto"),
+        "tEnterText": MessageLookupByLibrary.simpleMessage("Introducir texto"),
+        "tFolders": MessageLookupByLibrary.simpleMessage("Carpetas"),
         "tItHasUpdated": MessageLookupByLibrary.simpleMessage("Se actualizó"),
         "tLanguage": MessageLookupByLibrary.simpleMessage("Idioma"),
         "tLanguageEnglish": MessageLookupByLibrary.simpleMessage("Ingles"),
         "tLanguageSpanish": MessageLookupByLibrary.simpleMessage("Español"),
         "tLight": MessageLookupByLibrary.simpleMessage("Claro"),
+        "tMoveTo": MessageLookupByLibrary.simpleMessage("Mover a"),
         "tMyNotes": MessageLookupByLibrary.simpleMessage("Mis Notas"),
+        "tNameInUse": MessageLookupByLibrary.simpleMessage(
+            "¡Ups! Ese nombre ya está en uso."),
+        "tNewFolder": MessageLookupByLibrary.simpleMessage("Nueva carpeta"),
         "tNoNote": MessageLookupByLibrary.simpleMessage("Aún no hay notas"),
+        "tNoTitle": MessageLookupByLibrary.simpleMessage("Sin título"),
         "tNothingToSave":
             MessageLookupByLibrary.simpleMessage("Nada que guardar"),
+        "tOthers": MessageLookupByLibrary.simpleMessage("Otros"),
+        "tPrivacyPolicy":
+            MessageLookupByLibrary.simpleMessage("Política de Privacidad"),
         "tRemove": MessageLookupByLibrary.simpleMessage("Eliminar"),
+        "tRenameFolder":
+            MessageLookupByLibrary.simpleMessage("Renombrar carpeta"),
         "tSaveNoteButton":
             MessageLookupByLibrary.simpleMessage("Botón de guardar nota"),
         "tSearchNote": MessageLookupByLibrary.simpleMessage("Buscar nota"),
+        "tSelectFolder":
+            MessageLookupByLibrary.simpleMessage("Seleccionar carpeta"),
+        "tSelectedItem": m1,
         "tSetting": MessageLookupByLibrary.simpleMessage("Configuración"),
         "tSettingButton":
             MessageLookupByLibrary.simpleMessage("Botón de configuración"),
@@ -58,6 +83,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Mostrar menu de temas"),
         "tTheme": MessageLookupByLibrary.simpleMessage("Tema"),
         "tTitle": MessageLookupByLibrary.simpleMessage("Título"),
+        "tWithoutCategory":
+            MessageLookupByLibrary.simpleMessage("Sin categoría"),
         "tWriteANote": MessageLookupByLibrary.simpleMessage("Escribe una nota")
       };
 }

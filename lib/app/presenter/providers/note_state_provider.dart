@@ -3,6 +3,26 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_notes/app/infra/models/note_model.dart';
 
+// Provider para obtener la cantidad de notas registradas
+final noteLengthProvider = StateProvider<int>((ref) {
+  final notes = ref.watch(noteProvider);
+  return notes.length;
+});
+
+// Otención de cantidad de notas por categoria
+final notesByCategoryProvider = Provider<Map<String, int>>((ref) {
+  final notes = ref.watch(noteProvider);
+
+  final Map<String, int> categoryCount = {};
+
+  for (var note in notes) {
+    final categoryId = note.categoryId ?? 'uncategorized';
+    categoryCount[categoryId] = (categoryCount[categoryId] ?? 0) + 1;
+  }
+
+  return categoryCount;
+});
+
 // Provider para obtener una nota por ID
 final noteByIdProvider = Provider.family<Note?, String>((ref, id) {
   final notes = ref.watch(noteProvider);
@@ -30,9 +50,9 @@ class NoteStateNotifier extends StateNotifier<List<Note>> {
   void addNote({
     required String title,
     required String content,
-    String? category,
-    String? file,
+    String? folder,
     Map<String, dynamic>? metadata,
+    String? categoryId,
   }) {
     var uuid = const Uuid();
     final note = Note(
@@ -41,8 +61,8 @@ class NoteStateNotifier extends StateNotifier<List<Note>> {
       content: content,
       createdAt: DateTime.now(),
       updatedAt: null,
-      category: null,
-      file: null,
+      categoryId: categoryId,
+      folder: null,
       metadata: metadata,
     );
 
@@ -50,10 +70,6 @@ class NoteStateNotifier extends StateNotifier<List<Note>> {
     state = [...state, note];
   }
 
-  // void deleteNoteAt(int index) {
-  //   noteBox?.deleteAt(index);
-  //   state = List.from(state)..removeAt(index);
-  // }
   void deleteNoteById(String id) {
     final note = state.firstWhere((note) => note.id == id);
     noteBox.delete(note.key);
@@ -68,43 +84,13 @@ class NoteStateNotifier extends StateNotifier<List<Note>> {
     state = state.where((note) => !notesToDelete.contains(note)).toList();
   }
 
-  // void updateNoteAt(int index, String title, String content, String? category,
-  //     String? file, Map<String, dynamic>? metadata) {
-  //   final note = state[index];
-  //   final updatedNote = Note(
-  //     id: note.id,
-  //     title: title,
-  //     content: content,
-  //     category: category,
-  //     file: file,
-  //     updatedAt: DateTime.now(),
-  //     metadata: metadata,
-  //   );
-
-  //   noteBox?.putAt(index, updatedNote);
-  //   state = List.from(state)
-  //     ..removeAt(index)
-  //     ..insert(index, updatedNote);
-  // }
   void updateNoteById({
     required String id,
     required String title,
     required String content,
-    String? category,
-    String? file,
+    String? categoryId,
     Map<String, dynamic>? metadata,
   }) {
-    // final note = state.firstWhere((note) => note.id == id);
-    // note
-    //   ..title = title
-    //   ..content = content
-    //   ..category = category
-    //   ..file = file
-    //   ..updatedAt = DateTime.now()
-    //   ..metadata = metadata;
-
-    // note.save();
-    // state = state.map((n) => n.id == id ? note : n).toList();
     final noteIndex = state.indexWhere((note) => note.id == id);
     if (noteIndex != -1) {
       final updatedNote = state[noteIndex].copyWith(
@@ -112,6 +98,7 @@ class NoteStateNotifier extends StateNotifier<List<Note>> {
         content: content,
         updatedAt: DateTime.now(),
         metadata: metadata,
+        categoryId: categoryId,
       );
 
       noteBox.put(state[noteIndex].key, updatedNote);
@@ -120,5 +107,39 @@ class NoteStateNotifier extends StateNotifier<List<Note>> {
           if (i == noteIndex) updatedNote else state[i]
       ];
     }
+  }
+
+  void updateNotesCategory(Set<Note> selectedNotes, String? newCategoryId) {
+    final updatedNotes = state.map((note) {
+      if (selectedNotes.contains(note)) {
+        final updatedNote = note.copyWith(
+          categoryId: newCategoryId,
+          // updatedAt: DateTime.now(),
+        );
+        noteBox.put(note.key, updatedNote);
+        return updatedNote;
+      }
+      return note;
+    }).toList();
+
+    state = updatedNotes;
+  }
+
+  // Método para filtrar notas por categoría
+  List<Note> filterNotesByCategory(String categoryId) {
+    return state.where((note) => note.categoryId == categoryId).toList();
+  }
+
+  // Método para eliminar notas por categoría
+  void deleteNotesByCategory(List<String> categoryIds) {
+    final notesToDelete =
+        state.where((note) => categoryIds.contains(note.categoryId)).toList();
+
+    for (var note in notesToDelete) {
+      noteBox.delete(note.key);
+    }
+
+    state =
+        state.where((note) => !categoryIds.contains(note.categoryId)).toList();
   }
 }
