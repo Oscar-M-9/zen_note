@@ -46,6 +46,10 @@ ThemeData _themeData(ThemeApp themeApp) {
   switch (themeApp) {
     case ThemeApp.dark:
       return ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          brightness: Brightness.dark,
+          primarySwatch: ColorsApp.primeColor,
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: const Color(0xF50C0C0C),
         cardColor: const Color(0xFF3C3C3C),
@@ -57,9 +61,6 @@ ThemeData _themeData(ThemeApp themeApp) {
           ),
         ),
         primaryColor: Colors.black,
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: ColorsApp.primeColor,
-        ),
         textTheme: const TextTheme(
           labelLarge: TextStyle(
             fontFamily: "Poppins",
@@ -113,11 +114,20 @@ ThemeData _themeData(ThemeApp themeApp) {
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Color(0xFF1F1F1F),
         ),
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: ColorsApp.primary,
+          selectionColor: ColorsApp.primary.withOpacity(0.8),
+          selectionHandleColor: ColorsApp.primary,
+        ),
       );
 
     case ThemeApp.light:
     default:
       return ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: ColorsApp.primeColor,
+          brightness: Brightness.light,
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         primaryColor: ColorsApp.primary,
         appBarTheme: const AppBarTheme(
@@ -126,9 +136,6 @@ ThemeData _themeData(ThemeApp themeApp) {
         ),
         cardColor: Colors.white,
         scaffoldBackgroundColor: const Color(0xFFF6F6F6),
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: ColorsApp.primeColor,
-        ),
         textTheme: const TextTheme(
           labelLarge: TextStyle(
             fontFamily: "Poppins",
@@ -181,6 +188,11 @@ ThemeData _themeData(ThemeApp themeApp) {
         ),
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Colors.white,
+        ),
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: ColorsApp.primary,
+          selectionColor: ColorsApp.primary.withOpacity(0.8),
+          selectionHandleColor: ColorsApp.primary,
         ),
       );
   }

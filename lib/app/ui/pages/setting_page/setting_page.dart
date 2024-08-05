@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:my_notes/app/presenter/providers/language_state_provider.dart';
 import 'package:my_notes/app/presenter/providers/theme_state_provider.dart';
-import 'package:my_notes/app/ui/pages/setting/widgets/list_title_language.dart';
-import 'package:my_notes/app/ui/pages/setting/widgets/list_title_theme.dart';
+import 'package:my_notes/app/ui/pages/setting_page/widgets/list_title_language.dart';
+import 'package:my_notes/app/ui/pages/setting_page/widgets/list_title_theme.dart';
 import 'package:my_notes/app/ui/shared/custom_back_button.dart';
 import 'package:my_notes/generated/l10n.dart';
 import 'package:url_launcher/url_launcher.dart';

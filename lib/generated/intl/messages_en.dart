@@ -26,8 +26,39 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "acceptButtonText": MessageLookupByLibrary.simpleMessage("Accept"),
+        "labelBlockquote": MessageLookupByLibrary.simpleMessage("Blockquote"),
+        "labelBold": MessageLookupByLibrary.simpleMessage("Bold"),
+        "labelCut": MessageLookupByLibrary.simpleMessage("Cut"),
+        "labelFullWidth": MessageLookupByLibrary.simpleMessage("Full width"),
+        "labelHeader1": MessageLookupByLibrary.simpleMessage("Header 1"),
+        "labelHeader2": MessageLookupByLibrary.simpleMessage("Header 2"),
+        "labelHeader3": MessageLookupByLibrary.simpleMessage("Header 3"),
+        "labelItalics": MessageLookupByLibrary.simpleMessage("Italics"),
+        "labelLimitedWidth":
+            MessageLookupByLibrary.simpleMessage("Limited width"),
+        "labelLink": MessageLookupByLibrary.simpleMessage("Link"),
+        "labelMoreOptions": MessageLookupByLibrary.simpleMessage(
+            "More Options (not implemented)"),
+        "labelOrderedListItem":
+            MessageLookupByLibrary.simpleMessage("Ordered List Item"),
+        "labelParagraph": MessageLookupByLibrary.simpleMessage("Paragraph"),
+        "labelStrikethrough":
+            MessageLookupByLibrary.simpleMessage("Strikethrough"),
+        "labelSubscript": MessageLookupByLibrary.simpleMessage("Subscript"),
+        "labelSuperscript": MessageLookupByLibrary.simpleMessage("Superscript"),
+        "labelTextAlignment":
+            MessageLookupByLibrary.simpleMessage("Text Alignment"),
+        "labelTextBlockType":
+            MessageLookupByLibrary.simpleMessage("Text block type"),
+        "labelUnorderedListItem":
+            MessageLookupByLibrary.simpleMessage("Unordered List Item"),
+        "noContentAlertContent": MessageLookupByLibrary.simpleMessage(
+            "There is no content in the note. Please write something before saving."),
+        "noContentAlertTitle":
+            MessageLookupByLibrary.simpleMessage("Empty Note"),
         "tAccept": MessageLookupByLibrary.simpleMessage("Accept"),
-        "tAddATitle": MessageLookupByLibrary.simpleMessage("Agregue un título"),
+        "tAddATitle": MessageLookupByLibrary.simpleMessage("Add a title"),
         "tAddNoteButton":
             MessageLookupByLibrary.simpleMessage("Add note button"),
         "tAll": MessageLookupByLibrary.simpleMessage("All"),
@@ -77,12 +108,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Show language menu"),
         "tShowThemeMenu":
             MessageLookupByLibrary.simpleMessage("Show theme menu"),
-        "tStartwriting":
-            MessageLookupByLibrary.simpleMessage("Empiece a escribir"),
+        "tStartwriting": MessageLookupByLibrary.simpleMessage("Start writing"),
         "tTheme": MessageLookupByLibrary.simpleMessage("Theme"),
         "tTitle": MessageLookupByLibrary.simpleMessage("Title"),
         "tWithoutCategory":
             MessageLookupByLibrary.simpleMessage("Without category"),
-        "tWriteANote": MessageLookupByLibrary.simpleMessage("Escriba una nota")
+        "tWriteANote": MessageLookupByLibrary.simpleMessage("Write a note")
       };
 }

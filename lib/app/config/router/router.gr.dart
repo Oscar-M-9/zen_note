@@ -17,7 +17,7 @@ import 'package:my_notes/app/ui/pages/category_folder/category_folder_page.dart'
 import 'package:my_notes/app/ui/pages/category_folder/move_to/move_to_page.dart'
     as _i4;
 import 'package:my_notes/app/ui/pages/home/home_page.dart' as _i3;
-import 'package:my_notes/app/ui/pages/setting/setting_page.dart' as _i5;
+import 'package:my_notes/app/ui/pages/setting_page/setting_page.dart' as _i5;
 import 'package:my_notes/app/ui/pages/update_note/update_note.dart' as _i6;
 
 abstract class $AppRouter extends _i7.RootStackRouter {

@@ -31,7 +31,6 @@ class BtnAddFolderState extends ConsumerState<BtnAddFolder> {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
-    final minWidthBtn = (MediaQuery.of(context).size.width / 2) - 40;
 
     return Container(
       width: double.infinity,
@@ -96,72 +95,78 @@ class BtnAddFolderState extends ConsumerState<BtnAddFolder> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SizedBox(
-                          width: minWidthBtn,
-                          child: MaterialButton(
-                            onPressed: () {
-                              context.router.maybePop();
-                            },
-                            elevation: 0,
-                            highlightElevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            padding: const EdgeInsets.all(10.0),
-                            color: Colors.transparent,
-                            child: FittedBox(
-                              child: Text(
-                                S.of(context).tCancel,
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: minWidthBtn,
-                          child: MaterialButton(
-                            onPressed: () {
-                              if (!formKey.currentState!.validate()) {
-                                return;
-                              }
-                              final name = nameController.text;
-                              final categoryId = ref
-                                  .read(categoryProvider.notifier)
-                                  .addCategory(
-                                    name: name,
-                                  );
-                              nameController.clear();
-                              if (widget.action == "move_to") {
-                                // crear la carpeta y poner las notas seleccionadas dentro
-                                ref.read(activeCategory.notifier).state =
-                                    categoryId;
-                                updateCategoryOfSelectedNotes(ref, categoryId);
-                                context.router
-                                    .popUntilRouteWithPath(RouteName.home);
-                              } else {
+                    LayoutBuilder(builder: (context, constraints) {
+                      final minWidthBtn = (constraints.maxWidth / 2) - 40;
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SizedBox(
+                            width: minWidthBtn,
+                            child: MaterialButton(
+                              onPressed: () {
                                 context.router.maybePop();
-                              }
-                            },
-                            elevation: 0,
-                            highlightElevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            padding: const EdgeInsets.all(10.0),
-                            color: ColorsApp.primary,
-                            child: FittedBox(
-                              child: Text(
-                                S.of(context).tAccept,
-                                style: Theme.of(context).textTheme.titleMedium,
+                              },
+                              elevation: 0,
+                              highlightElevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              padding: const EdgeInsets.all(10.0),
+                              color: Colors.transparent,
+                              child: FittedBox(
+                                child: Text(
+                                  S.of(context).tCancel,
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
+                          SizedBox(
+                            width: minWidthBtn,
+                            child: MaterialButton(
+                              onPressed: () {
+                                if (!formKey.currentState!.validate()) {
+                                  return;
+                                }
+                                final name = nameController.text;
+                                final categoryId = ref
+                                    .read(categoryProvider.notifier)
+                                    .addCategory(
+                                      name: name,
+                                    );
+                                nameController.clear();
+                                if (widget.action == "move_to") {
+                                  // crear la carpeta y poner las notas seleccionadas dentro
+                                  ref.read(activeCategory.notifier).state =
+                                      categoryId;
+                                  updateCategoryOfSelectedNotes(
+                                      ref, categoryId);
+                                  context.router
+                                      .popUntilRouteWithPath(RouteName.home);
+                                } else {
+                                  context.router.maybePop();
+                                }
+                              },
+                              elevation: 0,
+                              highlightElevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              padding: const EdgeInsets.all(10.0),
+                              color: ColorsApp.primary,
+                              child: FittedBox(
+                                child: Text(
+                                  S.of(context).tAccept,
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    }),
                     const SizedBox(height: 20),
                   ],
                 ),

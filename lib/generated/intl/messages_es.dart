@@ -27,8 +27,40 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "acceptButtonText": MessageLookupByLibrary.simpleMessage("Aceptar"),
+        "labelBlockquote":
+            MessageLookupByLibrary.simpleMessage("Cita de bloque"),
+        "labelBold": MessageLookupByLibrary.simpleMessage("Negrita"),
+        "labelCut": MessageLookupByLibrary.simpleMessage("Cortar"),
+        "labelFullWidth":
+            MessageLookupByLibrary.simpleMessage("Ancho completo"),
+        "labelHeader1": MessageLookupByLibrary.simpleMessage("Encabezado 1"),
+        "labelHeader2": MessageLookupByLibrary.simpleMessage("Encabezado 2"),
+        "labelHeader3": MessageLookupByLibrary.simpleMessage("Encabezado 3"),
+        "labelItalics": MessageLookupByLibrary.simpleMessage("Cursiva"),
+        "labelLimitedWidth":
+            MessageLookupByLibrary.simpleMessage("Ancho limitado"),
+        "labelLink": MessageLookupByLibrary.simpleMessage("Enlace"),
+        "labelMoreOptions": MessageLookupByLibrary.simpleMessage(
+            "Más Opciones (no se implanta)"),
+        "labelOrderedListItem":
+            MessageLookupByLibrary.simpleMessage("Elemento de lista cerrada"),
+        "labelParagraph": MessageLookupByLibrary.simpleMessage("Párrafo"),
+        "labelStrikethrough": MessageLookupByLibrary.simpleMessage("Tachado"),
+        "labelSubscript": MessageLookupByLibrary.simpleMessage("Subscript"),
+        "labelSuperscript": MessageLookupByLibrary.simpleMessage("Superscript"),
+        "labelTextAlignment":
+            MessageLookupByLibrary.simpleMessage("Alineación de texto"),
+        "labelTextBlockType":
+            MessageLookupByLibrary.simpleMessage("Tipo de bloque de texto"),
+        "labelUnorderedListItem": MessageLookupByLibrary.simpleMessage(
+            "Elemento de lista no ordenada"),
+        "noContentAlertContent": MessageLookupByLibrary.simpleMessage(
+            "No hay contenido en la nota. Por favor, escriba algo antes de guardar."),
+        "noContentAlertTitle":
+            MessageLookupByLibrary.simpleMessage("Nota Vacía"),
         "tAccept": MessageLookupByLibrary.simpleMessage("Aceptar"),
-        "tAddATitle": MessageLookupByLibrary.simpleMessage("agregue un título"),
+        "tAddATitle": MessageLookupByLibrary.simpleMessage("Agregue un título"),
         "tAddNoteButton":
             MessageLookupByLibrary.simpleMessage("Botón de agregar nota"),
         "tAll": MessageLookupByLibrary.simpleMessage("Todo"),

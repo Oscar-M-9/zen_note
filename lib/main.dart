@@ -1,3 +1,4 @@
+// import 'package:appflowy_editor/appflowy_editor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -44,18 +45,23 @@ class MainApp extends ConsumerWidget {
     return MaterialApp.router(
       // key: navigatorKey,
       debugShowCheckedModeBanner: false,
-      title: "My Notes",
+      title: "ZenNote",
       color: ColorsApp.primary,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         S.delegate,
+        // AppFlowyEditorLocalizations.delegate,
       ],
-      supportedLocales: S.delegate.supportedLocales,
+      supportedLocales: [
+        ...S.delegate.supportedLocales,
+        // ...AppFlowyEditorLocalizations.delegate.supportedLocales,
+      ],
       locale: locale,
       theme: themeData,
-      themeAnimationCurve: Curves.bounceIn,
+      // themeMode: ThemeMode.dark,
+      themeAnimationCurve: Curves.easeInOut,
       routerConfig: _appRouter.config(),
     );
   }

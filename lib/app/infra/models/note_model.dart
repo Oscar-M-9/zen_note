@@ -24,10 +24,16 @@ class Note extends HiveObject {
   String? categoryId;
 
   @HiveField(6)
-  String? folder;
+  bool favorite;
 
   @HiveField(7)
   Map<String, dynamic>? metadata;
+
+  @HiveField(8)
+  late String? documentJson;
+
+  @HiveField(9)
+  bool pinned;
 
   Note({
     required this.id,
@@ -36,8 +42,10 @@ class Note extends HiveObject {
     this.createdAt,
     this.updatedAt,
     this.categoryId,
-    this.folder,
+    this.favorite = false,
+    this.pinned = false,
     this.metadata,
+    this.documentJson,
   });
 
   Note copyWith({
@@ -47,8 +55,10 @@ class Note extends HiveObject {
     DateTime? createdAt,
     DateTime? updatedAt,
     String? categoryId,
-    String? folder,
+    bool? favorite,
+    bool? pinned,
     Map<String, dynamic>? metadata,
+    String? documentJson,
   }) {
     return Note(
       id: id ?? this.id,
@@ -57,10 +67,66 @@ class Note extends HiveObject {
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       categoryId: categoryId ?? this.categoryId,
-      folder: folder ?? this.folder,
+      favorite: favorite ?? this.favorite,
+      pinned: pinned ?? this.pinned,
       metadata: metadata ?? this.metadata,
+      documentJson: documentJson ?? this.documentJson,
     );
   }
+
+  // factory Note.fromDocument({
+  //   required String id,
+  //   String? title,
+  //   required MutableDocument document,
+  //   DateTime? createdAt,
+  //   DateTime? updatedAt,
+  //   String? categoryId,
+  //   String? folder,
+  //   Map<String, dynamic>? metadata,
+  // }) {
+  //   // Serializa cada nodo a JSON y guárdalo en una lista
+  //   final documentJsonNodes = jsonEncode({
+  //     'nodes': document.nodes.map((node) => nodeToJson(node)).toList(),
+  //   });
+
+  //   return Note(
+  //     id: id,
+  //     title: title,
+  //     content: document.toPlainText(),
+  //     createdAt: createdAt,
+  //     updatedAt: updatedAt,
+  //     categoryId: categoryId,
+  //     folder: folder,
+  //     metadata: metadata,
+  //     documentJsonNodes: [documentJsonNodes], // Lista de JSON
+  //   );
+  // }
+
+  // MutableDocument toDocument() {
+  //   final jsonData = jsonDecode(documentJsonNodes.first);
+  //   final nodes = (jsonData['nodes'] as List)
+  //       .map((jsonNode) => jsonToNode(jsonNode))
+  //       .toList();
+  //   return MutableDocument(nodes: nodes);
+  // }
+
+  // // Función para convertir un nodo a JSON
+  // Map<String, dynamic> nodeToJson(DocumentNode node) {
+  //   // Implementa aquí la lógica para convertir el nodo a un formato JSON
+  //   // Puedes usar `node.toPlainText()` o definir una representación específica
+  //   return {
+  //     'type': node.runtimeType.toString(),
+  //     'text': node.text.toPlainText(),
+  //     // Agrega más campos según sea necesario
+  //   };
+  // }
+
+  // // Función para convertir JSON a nodo
+  // DocumentNode jsonToNode(Map<String, dynamic> jsonNode) {
+  //   // Implementa aquí la lógica para reconstruir el nodo desde JSON
+  //   // Puedes usar los datos almacenados en el JSON para crear el nodo
+  //   return TextNode(jsonNode['text']);
+  // }
 
   // factory Note.create(
   //     String title, String content, Map<String, dynamic>? metadata) {

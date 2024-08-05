@@ -23,15 +23,17 @@ class NoteAdapter extends TypeAdapter<Note> {
       createdAt: fields[3] as DateTime?,
       updatedAt: fields[4] as DateTime?,
       categoryId: fields[5] as String?,
-      folder: fields[6] as String?,
+      favorite: fields[6] as bool,
+      pinned: fields[9] as bool,
       metadata: (fields[7] as Map?)?.cast<String, dynamic>(),
+      documentJson: fields[8] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Note obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -45,9 +47,13 @@ class NoteAdapter extends TypeAdapter<Note> {
       ..writeByte(5)
       ..write(obj.categoryId)
       ..writeByte(6)
-      ..write(obj.folder)
+      ..write(obj.favorite)
       ..writeByte(7)
-      ..write(obj.metadata);
+      ..write(obj.metadata)
+      ..writeByte(8)
+      ..write(obj.documentJson)
+      ..writeByte(9)
+      ..write(obj.pinned);
   }
 
   @override

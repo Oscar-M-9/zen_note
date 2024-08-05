@@ -270,30 +270,30 @@ class S {
     );
   }
 
-  /// `Empiece a escribir`
+  /// `Start writing`
   String get tStartwriting {
     return Intl.message(
-      'Empiece a escribir',
+      'Start writing',
       name: 'tStartwriting',
       desc: '',
       args: [],
     );
   }
 
-  /// `Agregue un título`
+  /// `Add a title`
   String get tAddATitle {
     return Intl.message(
-      'Agregue un título',
+      'Add a title',
       name: 'tAddATitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Escriba una nota`
+  /// `Write a note`
   String get tWriteANote {
     return Intl.message(
-      'Escriba una nota',
+      'Write a note',
       name: 'tWriteANote',
       desc: '',
       args: [],
@@ -505,6 +505,226 @@ class S {
     return Intl.message(
       'Select folder',
       name: 'tSelectFolder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Text block type`
+  String get labelTextBlockType {
+    return Intl.message(
+      'Text block type',
+      name: 'labelTextBlockType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bold`
+  String get labelBold {
+    return Intl.message(
+      'Bold',
+      name: 'labelBold',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Italics`
+  String get labelItalics {
+    return Intl.message(
+      'Italics',
+      name: 'labelItalics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Strikethrough`
+  String get labelStrikethrough {
+    return Intl.message(
+      'Strikethrough',
+      name: 'labelStrikethrough',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Superscript`
+  String get labelSuperscript {
+    return Intl.message(
+      'Superscript',
+      name: 'labelSuperscript',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subscript`
+  String get labelSubscript {
+    return Intl.message(
+      'Subscript',
+      name: 'labelSubscript',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Link`
+  String get labelLink {
+    return Intl.message(
+      'Link',
+      name: 'labelLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Text Alignment`
+  String get labelTextAlignment {
+    return Intl.message(
+      'Text Alignment',
+      name: 'labelTextAlignment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More Options (not implemented)`
+  String get labelMoreOptions {
+    return Intl.message(
+      'More Options (not implemented)',
+      name: 'labelMoreOptions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Header 1`
+  String get labelHeader1 {
+    return Intl.message(
+      'Header 1',
+      name: 'labelHeader1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Header 2`
+  String get labelHeader2 {
+    return Intl.message(
+      'Header 2',
+      name: 'labelHeader2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Header 3`
+  String get labelHeader3 {
+    return Intl.message(
+      'Header 3',
+      name: 'labelHeader3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Paragraph`
+  String get labelParagraph {
+    return Intl.message(
+      'Paragraph',
+      name: 'labelParagraph',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Blockquote`
+  String get labelBlockquote {
+    return Intl.message(
+      'Blockquote',
+      name: 'labelBlockquote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ordered List Item`
+  String get labelOrderedListItem {
+    return Intl.message(
+      'Ordered List Item',
+      name: 'labelOrderedListItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unordered List Item`
+  String get labelUnorderedListItem {
+    return Intl.message(
+      'Unordered List Item',
+      name: 'labelUnorderedListItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limited width`
+  String get labelLimitedWidth {
+    return Intl.message(
+      'Limited width',
+      name: 'labelLimitedWidth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full width`
+  String get labelFullWidth {
+    return Intl.message(
+      'Full width',
+      name: 'labelFullWidth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Empty Note`
+  String get noContentAlertTitle {
+    return Intl.message(
+      'Empty Note',
+      name: 'noContentAlertTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is no content in the note. Please write something before saving.`
+  String get noContentAlertContent {
+    return Intl.message(
+      'There is no content in the note. Please write something before saving.',
+      name: 'noContentAlertContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accept`
+  String get acceptButtonText {
+    return Intl.message(
+      'Accept',
+      name: 'acceptButtonText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cut`
+  String get labelCut {
+    return Intl.message(
+      'Cut',
+      name: 'labelCut',
       desc: '',
       args: [],
     );
